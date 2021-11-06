@@ -5,6 +5,7 @@ class LoginStrings {
   static const String skipBtn = "Skip";
   static const String appLogoPath = "assets/ryze-app-logo.jpg";
   static const String appLogoCirclePath = "assets/bell-icon-logo.png";
+  static const String rainbowLogoPath = "assets/rainbow-icon.png";
   static const String firstOnBoardPath = "assets/onboarding-01.jpg";
   static const String secondOnBoardPath = "assets/onboarding-02.jpg";
   static const String googleIconPath = 'assets/google-logo.png';
