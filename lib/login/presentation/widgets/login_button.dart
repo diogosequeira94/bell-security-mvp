@@ -18,6 +18,14 @@ class LoginButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorsList = [
+      Colors.red,
+      Colors.deepOrangeAccent,
+      Colors.yellow,
+      Colors.green,
+      Colors.blueAccent,
+      Colors.deepPurple,
+    ];
     return Align(
         alignment: Alignment.bottomCenter,
         child: InkWell(
@@ -31,9 +39,7 @@ class LoginButtonWidget extends StatelessWidget {
                           isAffirmative
                               ? Theme.of(context).buttonColor
                               : Color(0xFF0b0b0d),
-                          isAffirmative
-                              ? Colors.green
-                              : Color(0xFF1d1e22),
+                          isAffirmative ? Colors.green : Color(0xFF1d1e22),
                         ]
                       : [Colors.grey, Colors.grey],
                 ),
