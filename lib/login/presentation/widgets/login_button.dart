@@ -32,7 +32,7 @@ class LoginButtonWidget extends StatelessWidget {
                               ? Theme.of(context).buttonColor
                               : Color(0xFF0b0b0d),
                           isAffirmative
-                              ? Theme.of(context).accentColor
+                              ? Colors.green
                               : Color(0xFF1d1e22),
                         ]
                       : [Colors.grey, Colors.grey],

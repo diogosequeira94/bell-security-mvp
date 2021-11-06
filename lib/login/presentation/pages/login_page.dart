@@ -24,9 +24,11 @@ class LoginPage extends StatelessWidget {
                   children: [
                     const SizedBox(height: 8.0),
                     TextFormField(
+                        style: TextStyle(color: Colors.green),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.email),
                           labelText: LoginStrings.textFieldEmailLabel,
+                          focusColor: Colors.green,
                         ),
                         autocorrect: false,
                         onChanged: (value) {

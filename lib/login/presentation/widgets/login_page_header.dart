@@ -16,7 +16,7 @@ class LoginPageHeader extends StatelessWidget {
                   end: Alignment.bottomRight,
                   colors: [
                     Theme.of(context).buttonColor,
-                    Theme.of(context).accentColor,
+                    Colors.green,
                   ],
                 ),
                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(84.0))
