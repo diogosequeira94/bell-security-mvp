@@ -23,57 +23,63 @@ class LoginPage extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   children: [
                     const SizedBox(height: 8.0),
-                    TextFormField(
-                        style: TextStyle(color: Colors.green),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextFormField(
+                          style: TextStyle(color: Colors.green),
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.email),
+                            labelText: LoginStrings.textFieldEmailLabel,
+                            focusColor: Colors.green,
+                          ),
+                          autocorrect: false,
+                          onChanged: (value) {
+                            // context.read<SignInFormBloc>()
+                            //     .add(SignInFormEvent.emailChanged(value)),
+                          }
+
+                          // validator: (_) => context
+                          //     .read<SignInFormBloc>()
+                          //     .state
+                          //     .emailAddress
+                          //     .value
+                          //     .fold(
+                          //         (f) => f.maybeMap(
+                          //             invalidEmail: (_) =>
+                          //                 LoginStrings.textFieldEmailError,
+                          //             orElse: () => null),
+                          //         (_) => null),
+                          ),
+                    ),
+                    const SizedBox(height: 16.0),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextFormField(
                         decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.email),
-                          labelText: LoginStrings.textFieldEmailLabel,
-                          focusColor: Colors.green,
+                          prefixIcon: Icon(Icons.vpn_key),
+                          labelText: LoginStrings.textFieldPasswordLabel,
                         ),
                         autocorrect: false,
+                        obscureText: true,
                         onChanged: (value) {
-                          // context.read<SignInFormBloc>()
-                          //     .add(SignInFormEvent.emailChanged(value)),
-                        }
-
+                          // context.read<SignInFormBloc>().add(
+                          //       SignInFormEvent.passwordChanged(value),
+                          //     );
+                        },
                         // validator: (_) => context
                         //     .read<SignInFormBloc>()
                         //     .state
-                        //     .emailAddress
+                        //     .password
                         //     .value
                         //     .fold(
                         //         (f) => f.maybeMap(
-                        //             invalidEmail: (_) =>
-                        //                 LoginStrings.textFieldEmailError,
+                        //             shortPassword: (_) =>
+                        //                 LoginStrings.textFieldPasswordError,
                         //             orElse: () => null),
                         //         (_) => null),
-                        ),
-                    const SizedBox(height: 16.0),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.vpn_key),
-                        labelText: LoginStrings.textFieldPasswordLabel,
                       ),
-                      autocorrect: false,
-                      obscureText: true,
-                      onChanged: (value) {
-                        // context.read<SignInFormBloc>().add(
-                        //       SignInFormEvent.passwordChanged(value),
-                        //     );
-                      },
-                      // validator: (_) => context
-                      //     .read<SignInFormBloc>()
-                      //     .state
-                      //     .password
-                      //     .value
-                      //     .fold(
-                      //         (f) => f.maybeMap(
-                      //             shortPassword: (_) =>
-                      //                 LoginStrings.textFieldPasswordError,
-                      //             orElse: () => null),
-                      //         (_) => null),
                     ),
-                    const SizedBox(height: 16.0),
+                    const SizedBox(height: 24.0),
                     Align(
                         alignment: Alignment.centerRight,
                         child: GestureDetector(

@@ -23,8 +23,8 @@ class LoginPageHeader extends StatelessWidget {
             ),
             child: Center(
               child: Image.asset(LoginStrings.appLogoCirclePath,
-                width: 135.0,
-                height: 135.0,
+                width: 200.0,
+                height: 200.0,
               ),
             ),
           )
