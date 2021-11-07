@@ -1,5 +1,6 @@
 import 'package:bell_security_app/bottom_navigation_bar/bloc/bottom_navigation_bar_bloc.dart';
 import 'package:bell_security_app/home/presentation/home_page.dart';
+import 'package:bell_security_app/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,19 +23,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
           } else if (state is BottomNavigationProfilePageLoading) {
             return Center(child: CircularProgressIndicator());
           } else if (state is BottomNavigationProfilePageLoaded) {
-            return BlocProvider.value(
-                value: BlocProvider.of<UserBloc>(context),
-                child: AccountOverviewPage());
-          } else if (state is BottomNavigationExplorePageLoading) {
-            return Center(child: CircularProgressIndicator());
-          } else if (state is BottomNavigationExplorePageLoaded) {
-            return BlocProvider.value(
-                value: BlocProvider.of<BottomNavigationBarBloc>(context),
-                child: ExploreOverviewPage());
-          } else if (state is BottomNavigationExploreMapLoaded) {
-            return BlocProvider.value(
-                value: BlocProvider.of<JobsBloc>(context),
-                child: ExploreMapPage());
+            return ProfilePage();
           } else {
             return Container();
           }
@@ -52,17 +41,9 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.explore),
-              label: 'Explore',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.work_rounded),
-              label: 'My Jobs',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.person),
               backgroundColor: Theme.of(context).accentColor,
-              label: 'Account',
+              label: 'Profile',
             ),
           ],
           onTap: (index) {
@@ -74,17 +55,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
             if (index == 1) {
               context
                   .read<BottomNavigationBarBloc>()
-                  .add(BottomNavigationExplorePagePressed());
-            }
-            if (index == 2) {
-              context
-                  .read<BottomNavigationBarBloc>()
-                  .add(BottomNavigationJobsHubPressed());
-            }
-            if (index == 3) {
-              context
-                  .read<BottomNavigationBarBloc>()
-                  .add(BottomNavigationAccountPagePressed());
+                  .add(BottomNavigationProfilePagePressed());
             }
             setState(() {
               _currentIndex = index;

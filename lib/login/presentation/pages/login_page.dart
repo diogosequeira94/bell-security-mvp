@@ -1,3 +1,4 @@
+import 'package:bell_security_app/bottom_navigation_bar/widgets/bottom_nav_bar_widget.dart';
 import 'package:bell_security_app/login/presentation/widgets/google_sign_in_button.dart';
 import 'package:bell_security_app/login/presentation/widgets/login_button.dart';
 import 'package:bell_security_app/login/presentation/widgets/login_page_header.dart';
@@ -96,6 +97,11 @@ class LoginPage extends StatelessWidget {
                       child: LoginButtonWidget(
                           title: LoginStrings.signInButton,
                           action: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BottomNavBarWidget(),
+                                ));
                             // context.read<SignInFormBloc>().add(
                             //       const SignInFormEvent
                             //           .signInWithEmailAndPasswordPressed(),
