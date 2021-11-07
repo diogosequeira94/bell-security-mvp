@@ -1,9 +1,11 @@
+import 'package:bell_security_app/bottom_navigation_bar/bloc/bottom_navigation_bar_bloc.dart';
 import 'package:bell_security_app/bottom_navigation_bar/widgets/bottom_nav_bar_widget.dart';
 import 'package:bell_security_app/login/presentation/widgets/google_sign_in_button.dart';
 import 'package:bell_security_app/login/presentation/widgets/login_button.dart';
 import 'package:bell_security_app/login/presentation/widgets/login_page_header.dart';
 import 'package:bell_security_app/login/utils/login_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -100,7 +102,12 @@ class LoginPage extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => BottomNavBarWidget(),
+                                  builder: (context) => BlocProvider(
+                                      create: (context) =>
+                                          BottomNavigationBarBloc()
+                                            ..add(
+                                                BottomNavigationHomePagePressed()),
+                                      child: BottomNavBarWidget()),
                                 ));
                             // context.read<SignInFormBloc>().add(
                             //       const SignInFormEvent
