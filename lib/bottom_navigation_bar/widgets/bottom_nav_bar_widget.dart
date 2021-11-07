@@ -1,4 +1,5 @@
 import 'package:bell_security_app/bottom_navigation_bar/bloc/bottom_navigation_bar_bloc.dart';
+import 'package:bell_security_app/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,16 +19,9 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
             return Center(child: CircularProgressIndicator());
           } else if (state is BottomNavigationHomePageLoaded) {
             return HomePage();
-          } else if (state is BottomNavigationAccountPageLoading) {
+          } else if (state is BottomNavigationProfilePageLoading) {
             return Center(child: CircularProgressIndicator());
-          } else if (state is BottomNavigationJobsHubPageLoaded) {
-            return BlocProvider(
-                create: (context) => MyJobsCubit(ApplicationsNotifierRepository(
-                      firebaseStorage: FirebaseStorage.instance,
-                      fireStore: FirebaseFirestore.instance,
-                    )),
-                child: JobsHubPage());
-          } else if (state is BottomNavigationAccountPageLoaded) {
+          } else if (state is BottomNavigationProfilePageLoaded) {
             return BlocProvider.value(
                 value: BlocProvider.of<UserBloc>(context),
                 child: AccountOverviewPage());
