@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF249225),
+        accentColor: Color(0xFF4FA64F),
       ),
       home: SplashScreen(),
     );
