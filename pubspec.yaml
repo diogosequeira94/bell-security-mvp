@@ -29,6 +29,9 @@ flutter:
     - assets/rainbow-icon.png
     - assets/facebook.jpg
     - assets/google.jpg
+    - assets/bracelet.jpg
+    - assets/pendant.jpg
+    - assets/ring.jpg
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

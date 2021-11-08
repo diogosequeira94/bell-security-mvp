@@ -1,3 +1,4 @@
+import 'package:bell_security_app/home/presentation/widgets/accessories_carrousel.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,9 +12,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.green,
         title: Text('Home Page'),
       ),
-      body: Center(
-        child: Text('Home Page'),
-      ),
+      body: AccessoriesCarrousel(),
     );
   }
 }
