@@ -1,6 +1,7 @@
 import 'package:bell_security_app/bottom_navigation_bar/bloc/bottom_navigation_bar_bloc.dart';
 import 'package:bell_security_app/home/presentation/home_page.dart';
 import 'package:bell_security_app/profile/profile_page.dart';
+import 'package:bell_security_app/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,6 +25,8 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
             return Center(child: CircularProgressIndicator());
           } else if (state is BottomNavigationProfilePageLoaded) {
             return ProfilePage();
+          } else if (state is BottomNavigationSettingsPageLoaded) {
+            return SettingsPage();
           } else {
             return Container();
           }
@@ -45,6 +48,11 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
               backgroundColor: Theme.of(context).accentColor,
               label: 'Profile',
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              backgroundColor: Theme.of(context).accentColor,
+              label: 'Settings',
+            ),
           ],
           onTap: (index) {
             if (index == 0) {
@@ -56,6 +64,11 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
               context
                   .read<BottomNavigationBarBloc>()
                   .add(BottomNavigationProfilePagePressed());
+            }
+            if (index == 2) {
+              context
+                  .read<BottomNavigationBarBloc>()
+                  .add(BottomNavigationSettingsPagePressed());
             }
             setState(() {
               _currentIndex = index;

@@ -19,7 +19,7 @@ class SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginPage(),
+            builder: (context) => LoginPageFaceLift(),
           ));
     });
   }
@@ -33,12 +33,15 @@ class SplashScreenState extends State<SplashScreen> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
-              Theme.of(context).buttonColor,
-              Colors.green,
+              Color(0xFF73AEF5),
+              Color(0xFF61A4F1),
+              Color(0xFF478DE0),
+              Color(0xFF398AE5),
             ],
+            stops: [0.1, 0.4, 0.7, 0.9],
           ),
         ),
         child: Center(

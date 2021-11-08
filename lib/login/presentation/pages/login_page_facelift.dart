@@ -1,7 +1,10 @@
+import 'package:bell_security_app/bottom_navigation_bar/bloc/bottom_navigation_bar_bloc.dart';
+import 'package:bell_security_app/bottom_navigation_bar/widgets/bottom_nav_bar_widget.dart';
 import 'package:bell_security_app/login/utils/constants.dart';
 import 'package:bell_security_app/login/utils/login_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPageFaceLift extends StatefulWidget {
   @override
@@ -128,7 +131,16 @@ class _LoginPageFaceLiftState extends State<LoginPageFaceLift> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BlocProvider(
+                    create: (context) => BottomNavigationBarBloc()
+                      ..add(BottomNavigationHomePagePressed()),
+                    child: BottomNavBarWidget()),
+              ));
+        },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),

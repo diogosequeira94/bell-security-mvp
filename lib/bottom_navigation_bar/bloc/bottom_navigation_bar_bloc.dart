@@ -21,6 +21,8 @@ class BottomNavigationBarBloc
     } else if (event is BottomNavigationProfilePagePressed) {
       yield BottomNavigationProfilePageLoading();
       yield BottomNavigationProfilePageLoaded();
+    } else if (event is BottomNavigationSettingsPagePressed) {
+      yield BottomNavigationSettingsPageLoaded();
     }
   }
 }
