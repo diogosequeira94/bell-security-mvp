@@ -21,6 +21,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
       Icon(Icons.settings, size: 30),
     ];
     return Scaffold(
+      extendBody: true,
       body: BlocBuilder<BottomNavigationBarBloc, BottomNavigationBarState>(
         builder: (context, state) {
           if (state is BottomNavigationHomePageLoading) {
@@ -43,7 +44,6 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
               builder: (context, state) {
         return CurvedNavigationBar(
           backgroundColor: Colors.transparent,
-          height: 60,
           items: _items,
           onTap: (index) {
             if (index == 0) {
@@ -54,9 +54,14 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
             if (index == 1) {
               context
                   .read<BottomNavigationBarBloc>()
-                  .add(BottomNavigationProfilePagePressed());
+                  .add(BottomNavigationSettingsPagePressed());
             }
             if (index == 2) {
+              context
+                  .read<BottomNavigationBarBloc>()
+                  .add(BottomNavigationProfilePagePressed());
+            }
+            if (index == 3) {
               context
                   .read<BottomNavigationBarBloc>()
                   .add(BottomNavigationSettingsPagePressed());
