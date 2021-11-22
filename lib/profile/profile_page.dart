@@ -13,8 +13,17 @@ class ProfilePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Text('Profile', style: TextStyle(color: Colors.black87)),
       ),
-      body: Center(
-        child: Text('Profile Page'),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Informaçoes Básicas'),
+
+            ],
+          ),
+        ),
       ),
     );
   }
