@@ -61,7 +61,7 @@ class SplashScreenState extends State<SplashScreen> {
                   Text(
                     'Bell',
                     style: GoogleFonts.lato(
-                        textStyle: Theme.of(context).textTheme.display1,
+                        textStyle: Theme.of(context).textTheme.bodyText1,
                         fontSize: 40,
                         fontWeight: FontWeight.w600,
                         fontStyle: FontStyle.italic,

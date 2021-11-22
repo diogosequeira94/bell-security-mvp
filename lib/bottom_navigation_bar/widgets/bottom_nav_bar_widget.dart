@@ -2,6 +2,7 @@ import 'package:bell_security_app/bottom_navigation_bar/bloc/bottom_navigation_b
 import 'package:bell_security_app/home/presentation/home_page.dart';
 import 'package:bell_security_app/profile/profile_page.dart';
 import 'package:bell_security_app/settings/settings_page.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,9 +12,14 @@ class BottomNavBarWidget extends StatefulWidget {
 }
 
 class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
-  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final _items = <Widget>[
+      Icon(Icons.home, size: 30),
+      Icon(Icons.notifications_rounded, size: 30),
+      Icon(Icons.person, size: 30),
+      Icon(Icons.settings, size: 30),
+    ];
     return Scaffold(
       body: BlocBuilder<BottomNavigationBarBloc, BottomNavigationBarState>(
         builder: (context, state) {
@@ -35,25 +41,10 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
       bottomNavigationBar:
           BlocBuilder<BottomNavigationBarBloc, BottomNavigationBarState>(
               builder: (context, state) {
-        return BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _currentIndex,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              backgroundColor: Theme.of(context).accentColor,
-              label: 'Profile',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              backgroundColor: Theme.of(context).accentColor,
-              label: 'Settings',
-            ),
-          ],
+        return CurvedNavigationBar(
+          backgroundColor: Colors.transparent,
+          height: 60,
+          items: _items,
           onTap: (index) {
             if (index == 0) {
               context
@@ -70,9 +61,6 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
                   .read<BottomNavigationBarBloc>()
                   .add(BottomNavigationSettingsPagePressed());
             }
-            setState(() {
-              _currentIndex = index;
-            });
           },
         );
       }),
