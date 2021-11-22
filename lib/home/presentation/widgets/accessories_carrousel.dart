@@ -31,20 +31,6 @@ class _AccessoriesCarrouselState extends State<AccessoriesCarrousel> {
     return SafeArea(
         child: Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0, right: 8.0),
-          child: Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.black12,
-                borderRadius: BorderRadius.circular(4.0)
-              ),
-              margin: EdgeInsets.all(2.0),
-
-                child: Icon(Icons.add)),
-          ),
-        ),
         Expanded(
           child: PageView.builder(
             controller: _pageController,
