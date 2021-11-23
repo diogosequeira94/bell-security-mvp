@@ -29,6 +29,11 @@ class BottomNavigationProfilePageLoaded extends BottomNavigationBarState {
   List<Object> get props => [];
 }
 
+class BottomNavigationMapPageLoaded extends BottomNavigationBarState {
+  @override
+  List<Object> get props => [];
+}
+
 class BottomNavigationSettingsPageLoaded extends BottomNavigationBarState {
   @override
   List<Object> get props => [];

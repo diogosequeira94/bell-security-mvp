@@ -1,8 +1,8 @@
 import 'package:bell_security_app/bottom_navigation_bar/bloc/bottom_navigation_bar_bloc.dart';
 import 'package:bell_security_app/home/presentation/home_page.dart';
+import 'package:bell_security_app/map/map_page.dart';
 import 'package:bell_security_app/profile/profile_page.dart';
 import 'package:bell_security_app/settings/settings_overview_page.dart';
-import 'package:bell_security_app/settings/settings_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +33,8 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
             return Center(child: CircularProgressIndicator());
           } else if (state is BottomNavigationProfilePageLoaded) {
             return ProfilePage();
+          } else if (state is BottomNavigationMapPageLoaded) {
+            return MapPage();
           } else if (state is BottomNavigationSettingsPageLoaded) {
             return AccountOverviewPage();
           } else {
@@ -55,7 +57,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
             if (index == 1) {
               context
                   .read<BottomNavigationBarBloc>()
-                  .add(BottomNavigationSettingsPagePressed());
+                  .add(BottomNavigationMapPagePressed());
             }
             if (index == 2) {
               context
