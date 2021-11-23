@@ -7,19 +7,19 @@ class NotificationSettings extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionHeader(title: 'Notification Settings'),
+        SectionHeader(title: 'Definições de Notificação'),
         SwitchListTile(
           activeColor: Theme.of(context).accentColor,
           contentPadding: const EdgeInsets.all(0),
           value: true,
-          title: Text('Receive Invites Notification'),
+          title: Text('Receber alertas de perigo'),
           onChanged: (isChecked) {},
         ),
         SwitchListTile(
           activeColor: Theme.of(context).accentColor,
           contentPadding: const EdgeInsets.all(0),
           value: false,
-          title: Text('Receive Responses Notification'),
+          title: Text('Receber notifições de Updates'),
           onChanged: (isChecked) {},
         ),
       ],

@@ -12,12 +12,12 @@ class LegalPoliciesSection extends StatelessWidget {
         SectionHeader(title: 'Legal'),
         ListTile(
           contentPadding: listTilePadding,
-          title: Text('Terms and conditions '),
+          title: Text('Termos e Condições '),
           onTap: () {},
         ),
         ListTile(
           contentPadding: listTilePadding,
-          title: Text('Privacy'),
+          title: Text('Privacidade'),
           onTap: () {},
         ),
       ],

@@ -11,7 +11,7 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         iconTheme: Theme.of(context).iconTheme,
         automaticallyImplyLeading: false,
-        title: Text('Profile', style: TextStyle(color: Colors.black87)),
+        title: Text('O meu Perfil', style: TextStyle(color: Colors.black87)),
       ),
       body: SingleChildScrollView(
         child: Padding(

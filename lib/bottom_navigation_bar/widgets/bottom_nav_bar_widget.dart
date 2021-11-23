@@ -17,7 +17,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
   Widget build(BuildContext context) {
     final _items = <Widget>[
       Icon(Icons.home, size: 30),
-      Icon(Icons.notifications_rounded, size: 30),
+      Icon(Icons.map_outlined, size: 30),
       Icon(Icons.person, size: 30),
       Icon(Icons.settings, size: 30),
     ];

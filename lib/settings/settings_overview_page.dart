@@ -24,7 +24,7 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         iconTheme: Theme.of(context).iconTheme,
         title: Text(
-          'My Account',
+          'Definições',
           style: TextStyle(color: Colors.black87),
         ),
         actions: [
@@ -33,15 +33,10 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/notifications');
               }),
-          IconButton(
-              icon: Icon(Icons.chat_outlined),
-              onPressed: () {
-                Navigator.of(context).pushNamed('/messages');
-              }),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0, bottom: 85.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -61,13 +56,13 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
                       );
                     },
                     title: Text(
-                      'Diogo Sequeira',
+                      'Yogi Coelho',
                       style: TextStyle(fontSize: 18.0),
                     ),
                     leading: CircleAvatar(
                       radius: 30.0,
                       backgroundImage: AssetImage(
-                        'assets/facebook.jpg',
+                        'assets/yogi.jpg',
                       ),
                     ),
                     trailing: Icon(
@@ -85,14 +80,8 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
               child: Column(
                 children: [
                   ListTile(
-                      leading: Icon(Icons.account_balance_outlined),
-                      title: Text('My Wallet'),
-                      trailing: Icon(Icons.keyboard_arrow_right),
-                      onTap: () {}),
-                  HorizontalDivider(),
-                  ListTile(
                     leading: Icon(Icons.lock_outline),
-                    title: Text('Change Password'),
+                    title: Text('Alterar Password'),
                     trailing: Icon(Icons.keyboard_arrow_right),
                     onTap: () =>
                         Navigator.of(context).pushNamed('/change-password'),
@@ -100,7 +89,7 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
                   HorizontalDivider(),
                   ListTile(
                     leading: Icon(Icons.language),
-                    title: Text('Change Language'),
+                    title: Text('Alterar idioma'),
                     trailing: Icon(Icons.keyboard_arrow_right),
                     onTap: () => print('Language change pressed'),
                     onLongPress: () =>
@@ -110,19 +99,19 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
               ),
             ),
             NotificationSettings(),
-            SectionHeader(title: 'Themes'),
+            SectionHeader(title: 'Temas'),
             SwitchListTile(
               activeColor: Theme.of(context).accentColor,
               contentPadding: const EdgeInsets.all(0),
               value: true,
-              title: Text('Dark Mode'),
+              title: Text('Modo Escuro'),
               onChanged: (bool value) {},
             ),
             SectionHeader(title: 'Premium'),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
-                'Currently you have no active plans.',
+                'Atualmente não tens planos subscritos.',
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
