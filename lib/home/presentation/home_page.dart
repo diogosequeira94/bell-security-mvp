@@ -22,7 +22,59 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/notifications');
               }),
           IconButton(
-              icon: Icon(Icons.add, color: Colors.black54), onPressed: () {}),
+            icon: Icon(Icons.add, color: Colors.black54),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (_) {
+                  return AlertDialog(
+                    title: Text('Adicionar novo dispositivo'),
+                    content: Container(
+                      height: 100.0,
+                      width: double.maxFinite,
+                      child: ListView(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text('Pulseira Bell 2321'),
+                              Icon(
+                                Icons.check_circle,
+                                color: Colors.blueAccent,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 14.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text('Anel Bell 123'),
+                              Icon(
+                                Icons.check_circle,
+                                color: Colors.blueAccent,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 14.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text('Colar Bell XPTO'),
+                              const Text(
+                                'Remover',
+                                style: TextStyle(
+                                    fontSize: 14.0, color: Colors.redAccent),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+          )
         ],
       ),
       body: AccessoriesCarrousel(),
