@@ -1,3 +1,4 @@
+import 'package:bell_security_app/settings/widgets/section_header_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -6,7 +7,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.white12,
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         iconTheme: Theme.of(context).iconTheme,
@@ -19,8 +20,32 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Informaçoes Básicas'),
-
+              SectionHeader(title: 'Informaçoes pessoais',),
+              SizedBox(height: 30),
+              Text('Contacto de Emergencia #1'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: TextFormField(
+                ),
+              ),
+              SizedBox(height: 10),
+              Text('Contacto de Emergencia #2'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: TextFormField(),
+              ),
+              SizedBox(height: 10),
+              Text('Contacto de Emergencia #3'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: TextFormField(),
+              ),
+              SizedBox(height: 30),
+              SectionHeader(title: 'Localizaçao',),
+              SizedBox(height: 30),
+              SwitchListTile(
+                title: Text('Partilhar o minha localizaçao'),
+                  value: true, onChanged: null)
             ],
           ),
         ),

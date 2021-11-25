@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Color(0xFFFFF5EE),
         iconTheme: Theme.of(context).iconTheme,
         automaticallyImplyLeading: false,
         title: Text('Bell', style: TextStyle(color: Colors.black87)),
@@ -34,38 +34,44 @@ class HomePage extends StatelessWidget {
                       width: double.maxFinite,
                       child: ListView(
                         children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Pulseira Bell 2321'),
-                              Icon(
-                                Icons.check_circle,
-                                color: Colors.blueAccent,
-                              ),
-                            ],
+                          InkWell(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text('Pulseira Bell 2321'),
+                                Icon(
+                                  Icons.check_circle,
+                                  color: Colors.blueAccent,
+                                ),
+                              ],
+                            ),
                           ),
                           const SizedBox(height: 14.0),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Anel Bell 123'),
-                              Icon(
-                                Icons.check_circle,
-                                color: Colors.blueAccent,
-                              ),
-                            ],
+                          InkWell(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text('Anel Bell 123'),
+                                Icon(
+                                  Icons.check_circle,
+                                  color: Colors.blueAccent,
+                                ),
+                              ],
+                            ),
                           ),
                           const SizedBox(height: 14.0),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Colar Bell XPTO'),
-                              const Text(
-                                'Remover',
-                                style: TextStyle(
-                                    fontSize: 14.0, color: Colors.redAccent),
-                              ),
-                            ],
+                          InkWell(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text('Colar Bell XPTO'),
+                                const Text(
+                                  'Remover',
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.redAccent),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),

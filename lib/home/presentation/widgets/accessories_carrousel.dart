@@ -1,4 +1,5 @@
 import 'package:bell_security_app/home/presentation/widgets/accessory_tile.dart';
+import 'package:bell_security_app/status_pill.dart';
 import 'package:flutter/material.dart';
 
 class AccessoriesCarrousel extends StatefulWidget {
@@ -31,16 +32,19 @@ class _AccessoriesCarrouselState extends State<AccessoriesCarrousel> {
     return SafeArea(
         child: Column(
       children: [
-        Expanded(
+        Flexible(
+          flex: 4,
           child: PageView.builder(
             controller: _pageController,
             itemCount: 3,
             itemBuilder: (_, currentIndex) {
+              _currentPage = currentIndex;
               return AccessoryTile(
                   image: _listSlide[currentIndex]['image'].toString());
             },
           ),
         ),
+        StatusPill(status: _getPillText(_currentPage)),
         _buildBullets(),
       ],
     ));
@@ -80,5 +84,18 @@ class _AccessoriesCarrouselState extends State<AccessoriesCarrousel> {
         ],
       ),
     );
+  }
+
+  String _getPillText(int index) {
+    switch (index) {
+      case 0:
+        return 'Active';
+      case 1:
+        return 'Inactive';
+      case 3:
+        return 'Live';
+      default:
+        return 'Inactive';
+    }
   }
 }
