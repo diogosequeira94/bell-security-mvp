@@ -46,6 +46,9 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
                           ),
                           const SizedBox(height: 14.0),
                           InkWell(
@@ -59,6 +62,9 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
                           ),
                           const SizedBox(height: 14.0),
                           InkWell(
@@ -73,6 +79,9 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
                           ),
                         ],
                       ),

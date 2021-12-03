@@ -16,9 +16,9 @@ class _AccessoriesCarrouselState extends State<AccessoriesCarrousel> {
         PageController(viewportFraction: 0.8);
     int _currentPage = 0;
     var _listSlide = [
-      {'id': 0, 'image': 'assets/ring.jpg'},
-      {'id': 1, 'image': 'assets/pendant.jpg'},
-      {'id': 2, 'image': 'assets/bracelet.jpg'},
+      {'id': 0, 'image': 'assets/ring.jpeg'},
+      {'id': 1, 'image': 'assets/bracelet.jpeg'},
+      {'id': 2, 'image': 'assets/bracelet2.jpeg'},
     ];
 
     @override

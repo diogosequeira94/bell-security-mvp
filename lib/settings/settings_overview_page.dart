@@ -19,6 +19,7 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFFF5EE),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -56,7 +57,7 @@ class _AccountOverviewPageState extends State<AccountOverviewPage> {
                       );
                     },
                     title: Text(
-                      'Yogi Coelho',
+                      'John Doe',
                       style: TextStyle(fontSize: 18.0),
                     ),
                     leading: CircleAvatar(
