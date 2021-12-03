@@ -7,8 +7,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFFF5EE),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFFF5EE),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         iconTheme: Theme.of(context).iconTheme,
         automaticallyImplyLeading: false,
         title: Text('Bell', style: TextStyle(color: Colors.black87)),
