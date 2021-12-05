@@ -1,4 +1,4 @@
-import 'package:bell_security_app/login/presentation/pages/login_page.dart';
+import 'package:bell_security_app/login/presentation/pages/firebase_login.dart';
 import 'package:bell_security_app/login/presentation/pages/login_page_facelift.dart';
 import 'package:bell_security_app/login/utils/login_strings.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginPageFaceLift(),
+            builder: (context) => FirebaseLogin(),
           ));
     });
   }
